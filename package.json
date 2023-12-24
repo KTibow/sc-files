@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "wrangler": "^3.22.1"
+  },
+  "scripts": {
+    "deploy": "wrangler pages deploy dist"
+  }
+}

@@ -5,6 +5,7 @@
     "wrangler": "^3.22.1"
   },
   "scripts": {
-    "deploy": "wrangler pages deploy dist"
+    "deploy": "wrangler pages deploy dist",
+    "clean_packs": "find dist -type f -name \"*.zip\" -exec sudo ./repack.fish {} \\;"
   }
 }

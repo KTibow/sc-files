@@ -17,6 +17,7 @@ function repack_file
   rm -rf $temp_dir/**/.DS_Store
   rm -rf $temp_dir/**/Thumbs.db
   rm -rf $temp_dir/__MACOSX
+  find $temp_dir -type d -empty -exec rmdir {} \;
 
   # Optimize PNG files
   find $temp_dir -type f -name "*.png" -exec optipng {} \;
@@ -27,6 +28,7 @@ function repack_file
   popd
 
   chown kendell $output_file_path
+  stripzip $output_file_path
 
   # Cleanup
   rm -rf $temp_dir
